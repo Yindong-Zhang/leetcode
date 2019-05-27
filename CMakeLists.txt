@@ -16,4 +16,4 @@ add_executable(src
         superEggDrop.h
         TheNumberAppearONLYOnce.h
         wordBreak2.h
-        wordBreak.h)
+        wordBreak.h trie.h findword2.h)

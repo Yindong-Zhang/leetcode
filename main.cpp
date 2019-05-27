@@ -1,36 +1,27 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include"wordBreak2.h"
+#include<array>
+#include"findword2.h"
 using namespace std;
 
 int main()
 {
 	string s;
-	WordBreak2 solution;
-	vector<string> wordDict;
+    vector<vector<char>> board = {{'a', 'a'}};
+    vector<string> words = {"a"};
+//    for(auto vec_it = board.begin(); vec_it != board.end(); ++vec_it){
+//        for(auto ch_it = vec_it->begin(); ch_it != vec_it->end(); ++ch_it){
+//            cout << *ch_it << ' ';
+//        }
+//        cout << endl;
+//    }
+    FindWord2 solution;
     vector<string> results;
-
-	cout << "test_case: " << endl;
-	cin >> s;
-	cout << s << endl;
-
-	string word;
-	cout << "Enter word dict: " << endl;
-	while(cin >> word)
-	{
-		wordDict.push_back(word);
-	}
-
-	for(int i = 0; i < wordDict.size(); i++)
-		cout << wordDict[i] << ' ';
-	cout << endl;
-
-	results = solution.wordBreak2(s, wordDict);
-	for(int i = 0; i < results.size(); ++i){
-        cout << results[i] <<  endl;
+    results = solution.findWords(board, words);
+    for(auto str_it = results.begin(); str_it != results.end(); ++str_it){
+        cout << *str_it << endl;
     }
-
 	return 0;
 
 	}
