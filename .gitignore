@@ -2,7 +2,7 @@
 *.d
 
 # ide
-.idea/
+/.idea/
 
 # Compiled Object files
 *.slo
