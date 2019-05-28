@@ -15,7 +15,7 @@ struct SearchResult {
 	int indice;
 };
 
-class Solution {
+class MajorityElement {
 public:
     int majorityElement(vector<int>& nums) {
         int candidate, count = 0;
