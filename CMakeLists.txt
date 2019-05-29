@@ -16,4 +16,4 @@ add_executable(src
         superEggDrop.h
         TheNumberAppearONLYOnce.h
         wordBreak2.h
-        wordBreak.h trie.h findword2.h isAnagram.h firstUniqueChar.h reverseString.h maxProduct.h rotate.h containDuplicates.h moveZeros.h)
+        wordBreak.h trie.h findword2.h isAnagram.h firstUniqueChar.h reverseString.h maxProduct.h rotate.h containDuplicates.h moveZeros.h shufflleVector.h listIntersect.h increasingTriplet.h productExceptSelf.h minStack.h findKthLargest.h medianFinder.h)
