@@ -6,14 +6,5 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(src
-        IsPalindrome.h
         main.cpp
-        majorityNumber.h
-        mergeSorted.h
-        myBinarySearch.h
-        partitionPalindrome.h
-        searchMatrix.h
-        superEggDrop.h
-        TheNumberAppearONLYOnce.h
-        wordBreak2.h
-        wordBreak.h trie.h findword2.h isAnagram.h firstUniqueChar.h reverseString.h maxProduct.h rotate.h containDuplicates.h moveZeros.h shufflleVector.h listIntersect.h increasingTriplet.h productExceptSelf.h minStack.h findKthLargest.h medianFinder.h kthSmallestInOrderedMatrix.h)
+        topFrequent.h maxSlidingWindow.h lengthOfLongestSubstring.h)

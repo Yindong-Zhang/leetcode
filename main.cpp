@@ -2,15 +2,13 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"kthSmallestInOrderedMatrix.h"
+#include"lengthOfLongestSubstring.h"
 using namespace std;
-
 int main()
 {
-    KthSmallestInOrderMatrix solution;
-    vector<vector<int>> vec{{1, 5, 9},
-                            {10, 11, 14},
-                            {12, 13, 15}};
-    cout << solution.kthSmallest(vec, 8) << endl;
+    LengthOfLongestSubstring solution;
+    string s("bbbb");
+    int res=  solution.lengthOfLongestSubstring(s) ;
+    cout << res << endl;
 
 }
