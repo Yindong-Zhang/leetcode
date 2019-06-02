@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-        topFrequent.h maxSlidingWindow.h lengthOfLongestSubstring.h)
+        topFrequent.h maxSlidingWindow.h lengthOfLongestSubstring.h calculator.h)
