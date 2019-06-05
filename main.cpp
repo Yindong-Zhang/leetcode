@@ -2,13 +2,13 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"calculator.h"
+#include"evalReversePorlandExpression.h"
 using namespace std;
 int main()
 {
-    Calculator solution;
-    string s("3 + 5 / 2 - 3 * 2");
-    int res=  solution.calculate(s) ;
+    EvalRPN solution;
+    vector<string> vec_str{"4", "13", "5", "/", "+"};
+    int res=  solution.evalRPN(vec_str) ;
     cout << res << endl;
 
 }
