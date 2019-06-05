@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-        copyRandomList.h)
+        copyRandomList.h hasCycleList.h)
