@@ -1,7 +1,10 @@
-#include<iostream>
-#include<string>
+//
+// Created by yindong on 19-6-6.
+//
+
+#ifndef SRC_BUILDLIST_H
+#define SRC_BUILDLIST_H
 #include<vector>
-#include<array>
 #include"sortList.h"
 using namespace std;
 
@@ -12,18 +15,7 @@ ListNode *buildList(vector<int> a){
     for(int i = 1; i < a.size(); i++){
         cur = new ListNode(a[i]);
         last->next = cur;
-        last = cur;
     }
     return head;
 }
-
-int main()
-{
-    SortList solution;
-    vector<int> vec{4,2, 5, 3, 7, 9, 0, 1};
-    ListNode *head = buildList(vec);
-    printList(head);
-    head =  solution.sortList(head) ;
-    printList(head);
-
-}
+#endif //SRC_BUILDLIST_H
