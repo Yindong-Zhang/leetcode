@@ -40,8 +40,8 @@ public:
                 q = q->next;
             }
             if( q != end){
-//                cout << q->val << endl;
                 p->val = q->val;
+                printList(start);
             }
             else{
                 break;
@@ -49,10 +49,16 @@ public:
 
             // p 找到下一个大于　pivot　的位置，　与　q 交换。
 
-            while( p->val <= pivot){
+            while( p->val <= pivot and p != q){
                 p = p->next;
             }
-            q->val = p->val;
+            if( p != q){
+                q->val = p->val;
+                printList(start);
+            }
+            else{
+                q = q->next;
+            }
         }
         p->val = pivot;
         return p;

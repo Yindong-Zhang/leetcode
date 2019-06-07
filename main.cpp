@@ -2,7 +2,7 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"sortList.h"
+#include"OddEvenList.h"
 using namespace std;
 
 ListNode *buildList(vector<int> a){
@@ -19,11 +19,10 @@ ListNode *buildList(vector<int> a){
 
 int main()
 {
-    SortList solution;
-    vector<int> vec{4,2, 5, 3, 7, 9, 0, 1};
+    OddEvenList solution;
+    vector<int> vec{1, 2, 3, 4, 5};
     ListNode *head = buildList(vec);
     printList(head);
-    head =  solution.sortList(head) ;
-    printList(head);
-
+    ListNode *res =  solution.oddEvenList(head);
+    printList(res);
 }
