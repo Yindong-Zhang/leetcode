@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-        copyRandomList.h hasCycleList.h title2Number.h fourSumCount.h randomizedSet.h kthSmallestInBinaryTree.h lowestCommonAncestor.h getIntersectNode.h sortList.h buildList.h isListPalindrome.h deleteNode.h OddEvenList.h codec.h)
+        copyRandomList.h hasCycleList.h title2Number.h fourSumCount.h randomizedSet.h kthSmallestInBinaryTree.h lowestCommonAncestor.h getIntersectNode.h sortList.h buildList.h isListPalindrome.h deleteNode.h OddEvenList.h codec.h largestNumber.h)

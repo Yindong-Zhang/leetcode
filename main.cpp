@@ -2,17 +2,20 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"OddEvenList.h"
+#include"codec.h"
 using namespace std;
 
 
 
 int main()
 {
-    OddEvenList solution;
-    vector<int> vec{1, 2, 3, 4, 5};
-    ListNode *head = buildList(vec);
-    printList(head);
-    ListNode *res =  solution.oddEvenList(head);
-    printList(res);
+    Codec solution;
+    vector<string> vec{"0", "0", "0", "0", "#", "#", "1", "#", "#", "#", "4"};
+    printVector(vec);
+    TreeNode *root = solution.buildTree(vec);
+    string s =  solution.serialize(root);
+    cout << s << endl;
+    TreeNode *new_root = solution.deserialize(s);
+    string new_s = solution.serialize(new_root);
+    cout << new_s << endl;
 }
