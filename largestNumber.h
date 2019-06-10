@@ -8,15 +8,36 @@
 #include<vector>
 #include<algorithm>
 
+
 using namespace std;
+
+bool compare(int &a, int &b){
+    string sa = to_string(a), sb = to_string(b);
+    string s1 = sa + sb;
+    string s2 = sb + sa;
+    if(s1 > s2){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 class LargestNumber {
 public:
-    // TODO:
+
     string largestNumber(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
+        sort(nums.begin(), nums.end(), compare);
         string res;
-        for(auto i : nums){
-            res.append(to_string(i));
+
+        if(nums.front() == 0){
+            return "0";
+        }
+        else{
+
+            for(auto ptr = nums.begin(); ptr != nums.end(); ptr++){
+                res.append(to_string(*ptr));
+            }
         }
         return res;
     }

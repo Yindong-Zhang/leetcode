@@ -2,20 +2,15 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"codec.h"
+#include"largestNumber.h"
 using namespace std;
 
 
 
 int main()
 {
-    Codec solution;
-    vector<string> vec{"0", "0", "0", "0", "#", "#", "1", "#", "#", "#", "4"};
-    printVector(vec);
-    TreeNode *root = solution.buildTree(vec);
-    string s =  solution.serialize(root);
-    cout << s << endl;
-    TreeNode *new_root = solution.deserialize(s);
-    string new_s = solution.serialize(new_root);
-    cout << new_s << endl;
+    LargestNumber solution;
+    vector<int> vec{0, 0, 0, 0};
+    string res= solution.largestNumber(vec);
+    cout << "result: " << res << endl;
 }
