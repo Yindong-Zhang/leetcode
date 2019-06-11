@@ -2,15 +2,19 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"largestNumber.h"
+#include"wiggleSort.h"
+#include"printVector.h"
 using namespace std;
 
 
 
 int main()
 {
-    LargestNumber solution;
-    vector<int> vec{0, 0, 0, 0};
-    string res= solution.largestNumber(vec);
-    cout << "result: " << res << endl;
+    WiggleSort solution;
+    vector<int> vec{1, 1, 2, 1, 2, 2, 1};
+    cout << "Before sort: " << endl;
+    printVector(vec);
+    solution.wiggleSort2(vec);
+    cout << "After sort: " << endl;
+    printVector(vec);
 }
