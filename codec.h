@@ -75,6 +75,7 @@ public:
     }
     TreeNode *buildTree(vector<string> vec){
         /* vec 中至少有一个数
+         * # 代表空指针
          * i 记录 在vec中 的位置，队列 q 记录尚未添加子树的节点
          * 重复：
          * i < size of vector:

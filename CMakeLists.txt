@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-        kRepeatedLongestSubstring.h)
+        kRepeatedLongestSubstring.h longestConsecutive.h)
