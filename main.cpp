@@ -2,17 +2,18 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"longestConsecutive.h"
-#include"printVector.h"
+#include"rob.h"
+#include"numSquares.h"
 using namespace std;
 
 
 
 int main()
 {
-    LongestConsecutive solution;
-    vector<int > vec{};
-    int res = solution.longestConsecutive(vec);
+    NumberSquares solution;
+//    vector<int > vec{2, 6, 3, 9, 8, 2, 1};
+
+    int res = solution.numberSquare(0);
 //    printVector(res);
     cout << "Result: " << res << endl;
 }
