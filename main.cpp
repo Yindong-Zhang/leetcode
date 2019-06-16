@@ -2,18 +2,17 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"rob.h"
-#include"numSquares.h"
+#include"longestIncreasingPathInMatrix.h"
 using namespace std;
 
 
 
 int main()
 {
-    NumberSquares solution;
-//    vector<int > vec{2, 6, 3, 9, 8, 2, 1};
+    LongestIncreasingPathinMatrix solution;
+    vector<vector<int>> m{};
 
-    int res = solution.numberSquare(0);
+    int res = solution.longestIncreasingPath(m);
 //    printVector(res);
     cout << "Result: " << res << endl;
 }
