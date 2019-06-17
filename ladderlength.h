@@ -9,90 +9,54 @@
 #include<climits>
 #include"printMatrix.h"
 #include<queue>
+#include<unordered_set>
 using namespace std;
 class LadderLength {
 public:
-    // 超时。。。。
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
         int num_nodes = wordList.size() + 1;
-        vector<vector<int>> adj_list(num_nodes, vector<int>{});
-
-        int ei = -1;
-        bool e_find = false;
-        int i = 0;
-        while(i < wordList.size() and not e_find){
-            if(wordList[i] == endWord){
-                ei = i;
-                e_find = true;
-            }
-            i++;
-        }
-
-        cout << ei << ' ' << e_find << endl;
-        if(not e_find){
+        unordered_set<string> wordSet(wordList.begin(), wordList.end());
+        if(wordSet.find(endWord) == wordSet.end()){
+            cout << "End word not found." << endl;
             return 0;
         }
 
-        wordList.push_back(beginWord);
-        // 构造邻接表
-        for(int i = 0; i < num_nodes; i++){
-            for(int j = i + 1; j < num_nodes; j++){
-                if(isVicinity(wordList[i], wordList[j])){
-                    // adj_list[i] append j, adj_list[j] append i
-                    adj_list[i].push_back(j);
-                    adj_list[j].push_back(i);
-
-                }
-            }
-        }
-        printMatrix(adj_list);
-        return bfs(num_nodes - 1, ei, adj_list);
+        return bfs(beginWord, endWord, wordSet);
     }
 
-    bool isVicinity(string a, string b){
-        int count = 0;
-        // 单词长度相同， 单词各不相同
-        for(int i = 0; i < a.size(); i++){
-            // 出现两个字符不同，判断不符合
-            if( a[i] != b[i]){
-                count++;
-            }
-            if( count > 1){
-                break;
-            }
-        }
-        if(count == 1){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
     struct Record{
-        int node;
+        string str;
         int depth;
     };
 
-    int bfs(int initial, int target, vector<vector<int>> adj_list){
+    int bfs(string initial, string target, unordered_set<string> wordSet){
         queue<Record> q;
-        vector<bool> visited(adj_list.size(), false);
+        // initial
         q.push(Record{initial, 1});
+
+        string alphebet = "abcdefghijklmnopqrstuvwxyz";
         Record cur;
+        string newStr;
         while(not q.empty()){
             cur = q.front();
             q.pop();
-            cout << cur.node << ' ' << cur.depth << endl;
-            visited[cur.node] = true;
-            if(cur.node == target){
+            cout << cur.str << ' ' << cur.depth << endl;
+            if(cur.str == target){
                 return cur.depth;
             }
-            for(auto ptr = adj_list[cur.node].begin(); ptr != adj_list[cur.node].end(); ptr++){
-                if(not visited[*ptr]){
-                    q.push(Record{*ptr, cur.depth + 1});
+            for(int i = 0; i < cur.str.size(); i++){
+                for(int j = 0; j < 26; j++) {
+                    newStr = cur.str;
+                    newStr[i] = alphebet[j];
+                    auto newStr_ptr = wordSet.find(newStr);
+                    if(newStr_ptr != wordSet.end()){
+                        q.push({newStr, cur.depth + 1});
+                        wordSet.erase(newStr_ptr);
+                    }
                 }
             }
         }
-        return -1;
+        return 0;
     }
 
 };

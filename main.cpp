@@ -2,17 +2,20 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"ladderlength.h"
+#include"numIslands.h"
 using namespace std;
 
 
 
 int main()
 {
-    LadderLength solution;
-    vector<string> m{"hot", "dot", "dog", "lot", "log", "cog"};
+    NumIslands solution;
+    vector<vector<char >> m{{'0', '0', '0', '0', '0'},
+                          {'0', '0', '0', '0', '0'},
+                          {'0', '0', '0', '0', '0'},
+                          {'0', '0', '0', '0', '0'}};
 
-    int res = solution.ladderLength("hit", "cog", m);
+    int res = solution.numIslands(m);
 //    printVector(res);
     cout << "Result: " << res << endl;
 }
