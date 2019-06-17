@@ -2,17 +2,17 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"longestIncreasingPathInMatrix.h"
+#include"ladderlength.h"
 using namespace std;
 
 
 
 int main()
 {
-    LongestIncreasingPathinMatrix solution;
-    vector<vector<int>> m{};
+    LadderLength solution;
+    vector<string> m{"hot", "dot", "dog", "lot", "log", "cog"};
 
-    int res = solution.longestIncreasingPath(m);
+    int res = solution.ladderLength("hit", "cog", m);
 //    printVector(res);
     cout << "Result: " << res << endl;
 }

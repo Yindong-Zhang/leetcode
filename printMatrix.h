@@ -9,7 +9,7 @@
 using namespace std;
 template <class T> void printMatrix(vector<vector<T>> m){
     for(int i = 0; i < m.size(); i++){
-        for(int j = 0; j < m[0].size(); j++){
+        for(int j = 0; j < m[i].size(); j++){
             cout << m[i][j] << ' ';
         }
         cout << endl;
