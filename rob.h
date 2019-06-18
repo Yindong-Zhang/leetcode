@@ -9,7 +9,6 @@ using namespace std;
 
 class Rob{
 public:
-    // TODO: wait for submit
     int rob(vector<int> &nums){
         if(nums.size() == 0){
             return 0;

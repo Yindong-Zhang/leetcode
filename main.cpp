@@ -2,20 +2,19 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"numIslands.h"
+#include"topologicalSort.h"
 using namespace std;
 
 
 
 int main()
 {
-    NumIslands solution;
-    vector<vector<char >> m{{'0', '0', '0', '0', '0'},
-                          {'0', '0', '0', '0', '0'},
-                          {'0', '0', '0', '0', '0'},
-                          {'0', '0', '0', '0', '0'}};
+    TopologicalSort solution;
+    vector<vector<int>> m{{1, 0},
 
-    int res = solution.numIslands(m);
+                          };
+
+    bool res = solution.canFinish(2, m);
 //    printVector(res);
     cout << "Result: " << res << endl;
 }
