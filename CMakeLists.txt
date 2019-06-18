@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-        kRepeatedLongestSubstring.h longestConsecutive.h numSquares.h lengthOfLIS.h coinChange.h longestIncreasingPathInMatrix.h printMatrix.h ladderlength.h numIslands.h topologicalSort.h)
+        findOrder.h singleNumber.h)
