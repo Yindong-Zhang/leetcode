@@ -2,16 +2,16 @@
 #include<string>
 #include<vector>
 #include<array>
-#include"singleNumber.h"
+#include"printVector.h"
+#include"fraction2Decimal.h"
 using namespace std;
 
 
 
 int main()
 {
-    SingleNumber solution;
-    vector<int> nums{2, 2 ,1};
-    auto res = solution.singleNumber(nums );
+    Fraction2Decimal solution;
+    auto res = solution.fractionToDecimal(-2147483648, 1);
 //    printVector(res);
     cout << "Result: " << res << endl;
 }
