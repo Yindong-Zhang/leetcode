@@ -3,15 +3,20 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"countPrime.h"
+#include"getSkyLine.h"
 using namespace std;
 
 
 
 int main()
 {
-    CountPrimes solution;
-    auto res = solution.countPrimes(2);
-//    printVector(res);
-    cout << "Result: " << res << endl;
+    GetSkyLine solution;
+    vector<vector<int>> box{ {0, 1, 3}};
+
+    auto res = solution.getSkyline(box);
+    for(auto ptr = res.begin(); ptr != res.end(); ptr++){
+        printVector(*ptr);
+
+    }
+//    cout << "Result: " << res << endl;
 }

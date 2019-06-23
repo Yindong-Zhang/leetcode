@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-        findOrder.h singleNumber.h maxPointCollinear.h fraction2Decimal.h factorialTrailingZero.h reverseBIts.h hammingWeight.h countPrime.h)
+        getSkyLine.h)
