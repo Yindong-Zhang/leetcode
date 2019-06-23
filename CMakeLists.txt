@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-        getSkyLine.h)
+        getSkyLine.h isHappyNumber.h getSumWithoutAdd.h)
