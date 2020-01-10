@@ -3,17 +3,15 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"getSumWithoutAdd.h"
+#include"stockChangeIII.h"
 using namespace std;
 
 
 
 int main()
 {
-    GetSumWithoutAdd solution;
-//    vector<vector<int>> box{ {0, 1, 3}};
-//    auto t = solution.transform(52);
-//    cout << t << endl;
-    auto res = solution.getSum(22, -1);
+    StockChange solution;
+    vector<int> prices{7,6,4,3,1};
+    auto res = solution.maxProfit(prices);
     cout << "Result: " << res << endl;
 }
