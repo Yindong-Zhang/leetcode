@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-         isHappyNumber.h getSumWithoutAdd.h stockChangeIII.h)
+         isHappyNumber.h getSumWithoutAdd.h stockChangeIII.h stockChangeI.h stockChangeII.h russianDollEnvelops.h)
