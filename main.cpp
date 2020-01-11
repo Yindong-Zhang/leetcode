@@ -3,15 +3,15 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"russianDollEnvelops.h"
+#include"waterTrap.h"
 using namespace std;
 
 
 
 int main()
 {
-    russianDollEnvelops solution;
-    vector<vector<int>> test{{4,5},{4,6},{6,7},{2,3},{1,1}};
-    auto res = solution.maxEnvelopes(test);
+    WaterTrap solution;
+    vector<int> test{0,1,0,2,1,0,1,3,2,1,2,1};
+    auto res = solution.trap(test);
     cout << "Result: " << res << endl;
 }
