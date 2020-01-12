@@ -3,15 +3,18 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"waterTrap.h"
+#include"combinationSumII.h"
 using namespace std;
 
 
 
 int main()
 {
-    WaterTrap solution;
-    vector<int> test{0,1,0,2,1,0,1,3,2,1,2,1};
-    auto res = solution.trap(test);
-    cout << "Result: " << res << endl;
+    CombinationSumII solution;
+    vector<int> test{10,1,2,7,6,1,5};
+    auto res = solution.combinationSum2(test, 8);
+    for(auto vec : res){
+        printVector(vec);
+    }
+//    cout << "Result: " << res << endl;
 }
