@@ -3,16 +3,16 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"combinationSumII.h"
+#include"permute.h"
 using namespace std;
 
 
 
 int main()
 {
-    CombinationSumII solution;
-    vector<int> test{10,1,2,7,6,1,5};
-    auto res = solution.combinationSum2(test, 8);
+    Permute solution;
+    vector<int> test{1,2,3};
+    auto res = solution.permute(test);
     for(auto vec : res){
         printVector(vec);
     }
