@@ -3,18 +3,19 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"permute.h"
+#include"maxSlidingWindow.h"
 using namespace std;
 
 
 
 int main()
 {
-    Permute solution;
-    vector<int> test{1,2,3};
-    auto res = solution.permute(test);
-    for(auto vec : res){
-        printVector(vec);
-    }
+    MaxSlidingWindow solution;
+    vector<int> test{7, 2, 4};
+    auto res = solution.maxSlidingWindow(test, 2);
+//    for(auto vec : res){
+//        printVector(vec);
+//    }
+    printVector(res);
 //    cout << "Result: " << res << endl;
 }
