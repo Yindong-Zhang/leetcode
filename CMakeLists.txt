@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-         isHappyNumber.h getSumWithoutAdd.h stockChangeIII.h stockChangeI.h stockChangeII.h russianDollEnvelops.h waterTrap.h combinationSumII.h permute.h permuteUnique.h preOrderSerializeDeserializeBinaryTree.h countDigitOne.h)
+         isHappyNumber.h getSumWithoutAdd.h stockChangeIII.h stockChangeI.h stockChangeII.h russianDollEnvelops.h waterTrap.h combinationSumII.h permute.h permuteUnique.h preOrderSerializeDeserializeBinaryTree.h countDigitOne.h nextPermutatioin.h isMatch.h)

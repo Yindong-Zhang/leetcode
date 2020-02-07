@@ -3,19 +3,20 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"maxSlidingWindow.h"
+#include"isMatch.h"
 using namespace std;
 
 
 
 int main()
 {
-    MaxSlidingWindow solution;
-    vector<int> test{7, 2, 4};
-    auto res = solution.maxSlidingWindow(test, 2);
+    IsMatch solution;
+    vector<int> test{1,2,3};
+    string s ="bccbbabcaccacbcacaa", p=  ".*b.*c*.*.*.c*a*.c";
+    cout << solution.isMatch(s, p);
 //    for(auto vec : res){
 //        printVector(vec);
 //    }
-    printVector(res);
+//    printVector(test);
 //    cout << "Result: " << res << endl;
 }
