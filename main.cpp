@@ -12,7 +12,7 @@ int main()
 {
     IsMatch solution;
     vector<int> test{1,2,3};
-    string s ="bccbbabcaccacbcacaa", p=  ".*b.*c*.*.*.c*a*.c";
+    string s = "aab", p = "c*a*b";
     cout << solution.isMatch(s, p);
 //    for(auto vec : res){
 //        printVector(vec);

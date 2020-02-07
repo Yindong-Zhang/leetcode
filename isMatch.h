@@ -66,11 +66,11 @@ using namespace std;
 class IsMatch {
 public:
     bool isMatch(string s, string p) {
-        int ip = 0, is = 0;
-        return isMatchRecursive(s, p, is, ip);
+        return isMatchDP(s, p);
     }
     // 递归求解，线下可行，线上堆溢出
-    // 存在最优子结构，并且存在子问题重复，(dfs 搜索重复），考虑dp
+    // 存在最优子结构，并且存在子问题重复，(dfs 搜索重复？），考虑dp/记忆化搜索
+    /*
     bool isMatchRecursive(string &s, string &p, int is, int ip) {
         if (ip == p.size()){
             if (is == s.size()) {
@@ -96,6 +96,7 @@ public:
             }
         }
     }
+     */
     bool match(char c, char p){
         if(p == '.'){
             return true;
@@ -107,5 +108,35 @@ public:
             return false;
         }
     }
+
+    // dp[i][j] s[:i] and p[:j]是否匹配
+    bool isMatchDP(string s, string p){
+        vector<vector<bool>> dp(s.size() + 1, vector<bool>(p.size() + 1, 0));
+        dp[0][0] = true;
+        for(int i = 0; i < s.size() + 1; i++){
+            for(int j = 1; j < p.size() + 1; j++){
+                if(p[j] == '*'){
+                    continue;
+                }
+                if(p[j - 1] == '*'){
+                    if(i == 0){
+                        dp[i][j] = dp[i][j - 2];
+                    }
+                    else{
+                        dp[i][j] = dp[i][j - 2] or (match(s[i - 1], p[j - 2]) and (dp[i - 1][j - 2] or dp[i - 1][j]));
+
+                    }
+                }
+                else{
+                    if(i > 0){
+                        dp[i][j] = match(s[i - 1], p[j - 1]) and dp[i - 1][j - 1];
+
+                    }
+                }
+            }
+        }
+        return dp[s.size()][p.size()];
+    }
+
 };
 #endif //SRC_ISMATCH_H
