@@ -3,18 +3,18 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"minWindow_76.h"
+#include"editDistance_72.h"
 using namespace std;
 
 
 
 int main()
 {
-    MinWindow solution;
-//    vector<int> test{7,2,5,10,8};
-    string s = "aa", p = "aa";
+    MinDistance solution;
+//    vector<int> test{2,1,5,6,2,3};
+    string s = "intention", p = "execution";
 //    cout << solution.F(15, test, 2) << endl;
-    auto res = solution.minWindow(s, p);
+    auto res = solution.minDistance(s, p);
     cout << res << endl;
 //    for(auto vec : res){
 //        printVector(vec);
