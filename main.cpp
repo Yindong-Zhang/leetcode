@@ -3,22 +3,27 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"editDistance_72.h"
+#include"spiralMatrix_54.h"
 using namespace std;
 
 
 
 int main()
 {
-    MinDistance solution;
+    SpiralMatrix solution;
 //    vector<int> test{2,1,5,6,2,3};
-    string s = "intention", p = "execution";
+//    string s = "intention", p = "execution";
 //    cout << solution.F(15, test, 2) << endl;
-    auto res = solution.minDistance(s, p);
-    cout << res << endl;
+    vector<vector<int>> test{
+            { 1, 2, 3 },
+            { 4, 5, 6 },
+            { 7, 8, 9 }
+    };
+    auto res = solution.spiralOrder(test);
+//    cout << res << endl;
 //    for(auto vec : res){
 //        printVector(vec);
 //    }
-//    printVector(test);
+    printVector(res);
 //    cout << "Result: " << res << endl;
 }
