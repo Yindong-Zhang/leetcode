@@ -36,7 +36,7 @@ public:
     	}
     	return 1;
     }
-
+pa
     bool isPalindrome(string s) {
         	if (s.size() == 0)
         		return true;
