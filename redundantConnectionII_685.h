@@ -45,8 +45,37 @@ v   v
 
 class Solution {
 public:
+    // 未完成
+    // 基本思路如下，遍历有向图入度，
+    // 如果存在入度为2的节点，删除其中一个入边，确保剩下的节点依然联通
+    // 如果所有节点入度为1， 依次删除入边，使节点为根节点，确保剩下的节点依然联通
+    // 联通性判断可以通过并查集实现
+    // 是否有更好的解法？？？
     vector<int> findRedundantDirectedConnection(vector<vector<int>>& edges) {
+        int nV = edges.size();
+        vector<int> parent(nV, 0);
+        for(int i = 0; i < nV; ++i){
+            parent[i] = i;
+        }
+        for(auto &edge: edges){
+            if(parent[edge[1] - 1] != edge[1] -1){
+                return edge;
+            }
+            else{
+                int root = i;
+                while(parent[root] != root){
+                    root = parent[root];
+                }
+                if(edge[0] == root + 1){
+                    return edge;
+                }
+                else{
+                    parent[edge[1] - 1] = edge[0] - 1;
 
+                }
+            }
+        }
+        return {0, 0};
     }
 };
 #endif //SRC_REDUNDANTCONNECTIONII_685_H
