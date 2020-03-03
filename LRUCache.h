@@ -131,6 +131,7 @@ public:
 };
 */
 
+// 使用stl list 双链表容器
 class LRUCache {
 public:
     int cap;
