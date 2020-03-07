@@ -3,7 +3,7 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"medianInTwoSortedArray.h"
+#include"medianInTwoSortedArray_4.h"
 using namespace std;
 
 
@@ -20,7 +20,7 @@ int main()
 //            { 7, 8, 9 }
 //    };
 //    string a = "123456789", b=  "987654321";
-    vector<int> a = {1, 2}, b = {3, 4};
+    vector<int> a = {2, 3,}, b = {};
     auto res = solution.findMedianSortedArrays(a, b);
     cout << res << endl;
 //    for(auto vec : res){

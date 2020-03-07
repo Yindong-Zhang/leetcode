@@ -26,9 +26,10 @@ nums2 = [3, 4]
 链接：https://leetcode-cn.com/problems/median-of-two-sorted-arrays
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-#ifndef SRC_MEDIANINTWOSORTEDARRAY_H
-#define SRC_MEDIANINTWOSORTEDARRAY_H
+#ifndef SRC_MEDIANINTWOSORTEDARRAY_4_H
+#define SRC_MEDIANINTWOSORTEDARRAY_4_H
 #include<vector>
+#include<bits/stdc++.h>
 using namespace std;
 
 class MedianInTwoSortedArray {
@@ -84,11 +85,52 @@ public:
             return max(nums1[p - 1], nums2[j_p - 1]);
         }
         // 假定 m < n
-        */
 
-        // 待完善
-        
+
+    // 待完善
+
 
     }
+     */
+
+    double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
+        int m = nums1.size(), n = nums2.size();
+//        int ml = max(0, (m - n) / 2), mr = min(m, (m + n) / 2);
+        if(m > n){
+            return findMedianSortedArrays(nums2, nums1);
+        }
+        int ml = 0, mr = m;
+        int m0, n0;
+        int al_max, ar_min, bl_max, br_min;
+        while(ml < mr){
+            m0 = (ml + mr)/ 2;
+            n0 = (m + n)/2 - m0;
+            al_max = m0 == 0 ? INT_MIN : nums1[m0-1];
+            ar_min = m0 == m ? INT_MAX : nums1[m0];
+            bl_max = n0 == 0 ? INT_MIN : nums2[n0 - 1];
+            br_min = n0 == n ? INT_MAX : nums2[n0];
+            if(al_max > br_min){
+                mr = m0 - 1;
+            }
+            else if(bl_max > ar_min){
+                ml = m0 + 1;
+            }
+            else{
+                break;
+            }
+        }
+        int m_cut = ml == mr ? ml : m0;
+        int n_cut = (m + n) / 2 - m_cut;
+        al_max = m_cut == 0 ? INT_MIN : nums1[m_cut-1];
+        ar_min = m_cut == m ? INT_MAX : nums1[m_cut];
+        bl_max = n_cut == 0 ? INT_MIN : nums2[n_cut - 1];
+        br_min = n_cut == n ? INT_MAX : nums2[n_cut];
+        if((m + n) % 2 == 0){
+            return (max(bl_max, al_max) + min(ar_min, br_min)) / 2.0;
+        }
+        else{
+            return min(ar_min, br_min);
+        }
+    };
 };
-#endif //SRC_MEDIANINTWOSORTEDARRAY_H
+#endif //SRC_MEDIANINTWOSORTEDARRAY_4_H
