@@ -65,6 +65,7 @@ public:
                 continue;
             }
             int l = i + 1, r = nums.size() - 1;
+            // 简化为一个双指针法的twoSum问题，最终复杂度是O(n^2)
             while(l < r){
 
                 if(l > i + 1 and nums[l] == nums[l - 1] and r < nums.size() -1 and nums[r] == nums[r + 1]){ // 此处对搜索进行剪枝，跳过，避免重复结果

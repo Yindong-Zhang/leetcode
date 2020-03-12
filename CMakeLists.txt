@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-         removeDuplicates_80.h medianInTwoSortedArray_4.h LRUCache.h cuttingRope_343.h cuttingRopeII.h maximumInQueue.h minCostTickets_983.h)
+         removeDuplicates_80.h medianInTwoSortedArray_4.h threeSumClosest.h)
