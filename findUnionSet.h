@@ -38,10 +38,21 @@ public:
     int find(int i){
         // 对于当前节点，查找根节点，并返回
         if(parent[i] != i){
-            parent[i] = find(parent[i]);
+            parent[i] = find(parent[i]); // 路径压缩在find不断上溯的过程中完成
         }
         return parent[i]
     }
+
+    // 或者
+    /*
+    int find(int i){
+        if(parent[i] == i){
+            return i;
+        }
+        pre[x] = find(pre[x]);
+        return pre[x];
+    }
+     */
 
     int join(int i, int j){
         int rti= find(i);

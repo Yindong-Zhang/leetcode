@@ -44,21 +44,22 @@ using namespace std;
 // 没有通过全部样例，我在各种奇怪的反例中迷失了。。。
 class IsNumber65 {
 public:
-    vector<vector<int>> T{{1, 2, -1, -1, 0},
-                          {-1, 2, -1, -1, -1},
-                          {-1, 2, 3, 4, 7},
-                          {-1, 3, -1, 4, 7},
-                          {5, 6, -1, -1, 1},
-                          {-1, 6, -1, -1, -1},
-                          {-1, 6, -1, -1, 7},
-                          {-1, -1, -1, -1, 7}};
+    vector<vector<int>> T{{2, 1, 3, -1, 0},
+                          {2, -1, 3, -1, -1},
+                          {2, -1, 4, 5, 8},
+                          {4, -1, -1, -1, -1},
+                          {4, -1, -1, 5, 8},
+                          {7, 6, -1, -1, -1},
+                          {7, -1, -1, -1, -1},
+                          {7, -1, -1, -1, 8},
+                          {-1, -1, -1, -1, 8}};
 
     int char2Ind(char c){
         if(c == '+' or c == '-'){
-            return 0;
+            return 1;
         }
         else if( c - '0' >= 0 and c - '0' <= 9){
-            return 1;
+            return 0;
         }
         else if(c == '.'){
             return 2;
@@ -76,7 +77,7 @@ public:
 
     bool isNumber(string s) {
         int state = 0;
-        vector<int> finals{0, 0, 1, 1, 0, 0, 1, 1};
+        vector<int> finals{0, 0, 1, 0, 1, 0, 0, 1, 1};
         for(int i = 0; i < s.size(); ++i){
             if(state == -1){
                 return false;
