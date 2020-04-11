@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(src
         main.cpp
-         removeDuplicates_80.h medianInTwoSortedArray_4.h threeSumClosest.h random10_470.h isMatch_44.h swapPairs_24.h isNumber_65.h combinationSumI_39.h primeFactorCount.h mergeKorderedList.h majorityElementII.h printInOrder_1114.h alternativePrint_1115.h addTwoNumbersInList.h mergeRange.h routeCount_62.h underGroundGame.h simplifyFraction.h)
+         removeDuplicates_80.h medianInTwoSortedArray_4.h threeSumClosest.h random10_470.h isMatch_44.h swapPairs_24.h isNumber_65.h combinationSumI_39.h primeFactorCount.h mergeKorderedList.h majorityElementII.h printInOrder_1114.h alternativePrint_1115.h addTwoNumbersInList.h mergeRange.h routeCount_62.h underGroundGame.h simplifyFraction.h reachPoints_780.h splitList_86.h)
