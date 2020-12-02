@@ -38,7 +38,51 @@ public:
     将左指针左移，直至窗口不再满足条件。记录复合条件的最小子串。
     重复1、2两步。
      */
+    string minWindow(string s, string t){
+        map<char, int> t_cntr, ch_cntr;
+        for(char ch : t){
+            if(t_cntr.find(ch) == t_cntr.end()){
+                t_cntr[ch] = 1;
+                ch_cntr[ch] = 0;
+            }
+            else{
+                t_cntr[ch]++;
+            }
+        }
+        int num_ch = t_cntr.size();
+        int l = 0, r = 0, ch_cnt = 0;
+        int min_width = INT_MAX;
+        string res;
+        while(r < s.size()){
+            while(r < s.size() and ch_cnt < num_ch){
+                char ch = s[r];
+                r++;
+                if(ch_cntr.find(ch) != ch_cntr.end()){
+                    ch_cntr[ch]++;
+                    if(ch_cntr[ch] == t_cntr[ch]){
+                        ch_cnt++;
+                    }
+                }
+            }
+            while(ch_cnt == num_ch){
+                char ch = s[l];
+                if(ch_cntr.find(ch) != ch_cntr.end()) {
+                    ch_cntr[ch]--;
+                    if (ch_cntr[ch] < t_cntr[ch]) {
+                        ch_cnt--;
+                        if(r - l < min_width) {
+                            min_width = r - l;
+                            res = s.substr(l, r - l);
+                        }
+                    }
+                }
+                l++;
+            }
+        }
+        return res;
+    }
     // 若字符串T为集合，理论上下面的算法有效且时间效率更高
+    /*
     string minWindow(string s, string t) {
         map<char, int> pos;
         for(char c: t){
@@ -107,5 +151,6 @@ public:
             return "";
         }
     }
+     */
 };
 #endif //SRC_MINWINDOW_76_H
