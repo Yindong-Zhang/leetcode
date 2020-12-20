@@ -3,14 +3,14 @@
 #include<vector>
 #include<array>
 #include"printVector.h"
-#include"minWindow_76.h"
+#include"monotoneIncreasingDigits_ 738.h"
 using namespace std;
 
 
 
 int main()
 {
-    MinWindow solution;
+     MonoIncreasingDigits solution;
 //    vector<int> days = {1,4,6,7,8,20}, costs = {2,7,15};
 //    vector<int> nums = {3, 2, 3};
 //    vector<vector<int>> a{{-2, -3, 3},
@@ -20,7 +20,7 @@ int main()
     string s= "a", p = "aa";
 //    string s= "+e";
 //    int sx = 1, sy = 1, tx = 3, ty = 5;
-    auto res = solution.minWindow(s, p);
+    auto res = solution.monotoneIncreasingDigits(110);
 //    cout << res << endl;
 //    for(auto vec : res){
 //        printVector(vec);
